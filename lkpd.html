@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LKPD JavaScript - String, Number, dan Konversi Data (Terisi)</title>
+    <link rel="stylesheet" href="lkpd.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- HEADER / IDENTITAS LKPD -->
+        <header class="header">
+            <div class="header-banner">
+                <h1>LEMBAR KERJA PESERTA DIDIK (LKPD)</h1>
+                <h2>JavaScript - String, Number, dan Konversi Data</h2>
+            </div>
+            
+            <div class="meta-grid">
+                <div><strong>Satuan Pendidikan:</strong> SMKN 1 GARUT</div>
+                <div><strong>Mata Pelajaran:</strong> Dasar-Dasar PPLG</div>
+                <div><strong>Kelas/Fase:</strong> X / Fase E</div>
+                <div><strong>Alokasi Waktu:</strong> 2 x 45 menit</div>
+            </div>
+
+            <div class="student-info">
+                <div class="field">
+                    <label>Nama:</label>
+                    <input type="text" value="Muhammad Zamzam Januar" readonly>
+                </div>
+                <div class="field">
+                    <label>Kelas / No. Absen:</label>
+                    <input type="text" value="X PPLG 1 / 18" readonly>
+                </div>
+                <div class="field">
+                    <label>Tanggal:</label>
+                    <input type="text" value="19 Oktober 2026" readonly>
+                </div>
+            </div>
+        </header>
+
+        <!-- A. TUJUAN PEMBELAJARAN -->
+        <section class="card border-blue">
+            <h3><span class="badge badge-blue">A</span> TUJUAN PEMBELAJARAN</h3>
+            <p>Setelah menyelesaikan LKPD ini, peserta didik mampu:</p>
+            <ol>
+                <li>Membedakan String dan Number.</li>
+                <li>Menjelaskan bahwa <code>prompt()</code> menghasilkan String.</li>
+                <li>Menggunakan <code>Number()</code> dan <code>String()</code>.</li>
+                <li>Menganalisis kesalahan akibat tipe data.</li>
+                <li>Membuat program input dan perhitungan sederhana.</li>
+            </ol>
+        </section>
+
+        <!-- B. PETUNJUK KERJA -->
+        <section class="card border-purple">
+            <h3><span class="badge badge-purple">B</span> PETUNJUK KERJA</h3>
+            <ul>
+                <li>Kerjakan mandiri terlebih dahulu.</li>
+                <li>Diskusikan melalui metode <em>Think Pair Share</em>.</li>
+            </ul>
+        </section>
+
+        <!-- C. AKTIVITAS 1 -->
+        <section class="card border-indigo">
+            <h3><span class="badge badge-indigo">C</span> AKTIVITAS 1: EKSPERIMEN 10 + 20</h3>
+            <p>Prediksi hasil sebelum menjalankan kode. Jalankan kode dan amati. Simpan file sebagai <code>lkpd_string_number_nama.js</code>.</p>
+            
+            <pre><code>let a = "10";
+let b = "20";
+console.log(a + b);</code></pre>
+
+            <div class="form-group">
+                <label>1. Apa output program?</label>
+                <div class="answer-box">1020</div>
+            </div>
+            <div class="form-group">
+                <label>2. Mengapa hasil tersebut terjadi?</label>
+                <div class="answer-box">Karena nilai variabel a dan b diapit tanda petik (" "), sehingga dianggap sebagai tipe data String. Operator + pada String berfungsi untuk menggabungkan teks (konkatenasi), bukan penjumlahan matematika.</div>
+            </div>
+            <div class="form-group">
+                <label>3. Apakah a dan b bertipe Number?</label>
+                <div class="answer-box">Tidak, keduanya bertipe String.</div>
+            </div>
+            <div class="form-group">
+                <label>4. Uji sekarang. Apakah prediksimu benar? Jelaskan.</label>
+                <div class="answer-box">Ya, benar. Saat dijalankan dengan Node.js/Console Browser, hasilnya adalah 1020 karena JavaScript melakukan penggabungan string.</div>
+            </div>
+        </section>
+
+        <!-- D. AKTIVITAS 2 -->
+        <section class="card border-teal">
+            <h3><span class="badge badge-teal">D</span> AKTIVITAS 2: MENEMUKAN TIPE DATA</h3>
+            <p>Jalankan kode berikut:</p>
+            <pre><code>let nama = "Asep";
+let umur = 16;
+console.log(typeof nama);
+console.log(typeof umur);</code></pre>
+
+            <table class="colored-table">
+                <thead>
+                    <tr>
+                        <th>Variabel</th>
+                        <th>Prediksi</th>
+                        <th>Hasil typeof</th>
+                        <th>Kesimpulan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>nama</code></td>
+                        <td>Teks / String</td>
+                        <td><span class="tag tag-orange">string</span></td>
+                        <td>Teks di dalam petik adalah String</td>
+                    </tr>
+                    <tr>
+                        <td><code>umur</code></td>
+                        <td>Angka / Number</td>
+                        <td><span class="tag tag-green">number</span></td>
+                        <td>Angka tanpa petik adalah Number</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="form-group" style="margin-top: 15px;">
+                <label>Temuan: Apa perbedaan String dan Number berdasarkan eksperimenmu?</label>
+                <div class="answer-box"><strong>String</strong> adalah tipe data berupa teks yang ditulis menggunakan tanda petik, jika dijumlahkan akan digabungkan. <strong>Number</strong> adalah tipe data berupa angka tanpa tanda petik yang dapat digunakan langsung untuk operasi aritmatika (seperti penjumlahan, pengurangan, perkalian).</div>
+            </div>
+        </section>
+
+        <!-- E. AKTIVITAS 3 -->
+        <section class="card border-amber">
+            <h3><span class="badge badge-amber">E</span> AKTIVITAS 3: KONVERSI STRING MENJADI NUMBER</h3>
+            <p>Perbaiki program agar menghasilkan 30. Gunakan <code>Number()</code>:</p>
+            <pre><code>let a = "10";
+let b = "20";
+let hasil = Number(a) + Number(b);
+console.log(hasil);</code></pre>
+
+            <div class="form-group">
+                <label>Catat hasil program & kodenya:</label>
+                <div class="answer-box">
+                    Baris kode konversi: <code>let hasil = Number(a) + Number(b);</code><br>
+                    Output di Console: <strong>30</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- F. AKTIVITAS 4 -->
+        <section class="card border-emerald">
+            <h3><span class="badge badge-emerald">F</span> AKTIVITAS 4: PROGRAM KASIR SEDERHANA</h3>
+            <p>Buat program yang meminta harga barang dan jumlah barang melalui <code>prompt()</code>, mengubah keduanya menjadi <code>Number</code>, lalu menghitung total harga.</p>
+            
+            <pre><code>let harga = Number(prompt("Masukkan harga: "));
+let jumlah = Number(prompt("Masukkan jumlah: "));
+let total = harga * jumlah;
+console.log("Total belanja = " + total);</code></pre>
+
+            <table class="colored-table">
+                <thead>
+                    <tr>
+                        <th>Input Uji</th>
+                        <th>Nilai Input</th>
+                        <th>Total Seharusnya</th>
+                        <th>Total Program</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Pengujian 1</strong></td>
+                        <td>
+                            Harga: Rp 15.000<br>
+                            Jumlah: 3
+                        </td>
+                        <td>Rp 45.000</td>
+                        <td><span class="tag tag-green">Rp 45.000</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- G. TANTANGAN -->
+        <section class="card border-rose">
+            <h3><span class="badge badge-rose">G</span> TANTANGAN: PROGRAM HITUNG NILAI</h3>
+            <p>Buat program dengan input nilai tugas, UTS, dan UAS. Konversikan semua input menggunakan <code>Number()</code>, lalu hitung rata-rata dengan rumus <code>(tugas + UTS + UAS) / 3</code>.</p>
+            
+            <div class="form-group">
+                <label>Algoritma saya:</label>
+                <div class="answer-box">
+                    1. Minta input nilai tugas, UTS, dan UAS dari pengguna menggunakan <code>prompt()</code>.<br>
+                    2. Konversikan ketiga input tersebut dari String menjadi tipe Number menggunakan fungsi <code>Number()</code>.<br>
+                    3. Hitung rata-rata dengan rumus: <code>let rataRata = (tugas + uts + uas) / 3;</code><br>
+                    4. Tampilkan hasil rata-rata nilai ke console atau layar menggunakan <code>console.log()</code> atau <code>alert()</code>.
+                </div>
+            </div>
+        </section>
+
+        <!-- H. THINK PAIR SHARE -->
+        <section class="card border-cyan">
+            <h3><span class="badge badge-cyan">H</span> THINK PAIR SHARE</h3>
+            <table class="colored-table">
+                <thead>
+                    <tr>
+                        <th style="width: 35%;">Pertanyaan</th>
+                        <th>Jawaban</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mengapa <code>prompt()</code> perlu dikonversi jika hasilnya ingin dihitung?</td>
+                        <td>Karena fungsi <code>prompt()</code> selalu mengembalikan input dalam bentuk <strong>String</strong>. Jika tidak dikonversi, operasi penjumlahan <code>+</code> akan melakukan penggabungan teks, bukan penjumlahan angka.</td>
+                    </tr>
+                    <tr>
+                        <td>Apa perbedaan <code>"10"</code> dengan <code>10</code>?</td>
+                        <td><code>"10"</code> adalah tipe data <strong>String</strong> (teks angka), sedangkan <code>10</code> adalah tipe data <strong>Number</strong> (nilai numerik asli).</td>
+                    </tr>
+                    <tr>
+                        <td>Apa yang terjadi jika lupa menggunakan <code>Number()</code>?</td>
+                        <td>Penjumlahan variabel akan menghasilkan gabungan string (misal: <code>"10" + "20" = "1020"</code>), yang menyebabkan perhitungan matematis salah.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="form-group" style="margin-top: 15px;">
+                <label><strong>Pair:</strong> Bandingkan jawaban dengan teman. Apakah sama? Mengapa bisa berbeda?</label>
+                <div class="answer-box">Jawaban kami secara umum sama pada konsep dasar, namun teman saya menuliskan penjelasan yang lebih singkat. Perbedaan ini terjadi karena sudut pandang penjelasan saat menganalisis program.</div>
+            </div>
+            <div class="form-group">
+                <label><strong>Share:</strong> Sampaikan satu temuan penting kepada kelas.</label>
+                <div class="answer-box">Temuan penting: "Setiap input dari user melalui browser (seperti prompt) secara default bertipe String, sehingga harus selalu dikonversi ke Number sebelum diproses secara matematis."</div>
+            </div>
+        </section>
+
+        <!-- I. REFLEKSI 3-2-1 -->
+        <section class="card border-violet">
+            <h3><span class="badge badge-violet">I</span> REFLEKSI 3-2-1</h3>
+            <div class="form-group">
+                <label>3 hal yang saya pahami:</label>
+                <div class="answer-box">
+                    1. Perbedaan tipe data String dan Number pada JavaScript.<br>
+                    2. Fungsi <code>prompt()</code> selalu menghasilkan tipe data String.<br>
+                    3. Cara mengkonversi tipe data String menjadi Number dengan fungsi <code>Number()</code>.
+                </div>
+            </div>
+            <div class="form-group">
+                <label>2 hal yang masih membingungkan:</label>
+                <div class="answer-box">
+                    1. Perbedaan penggunaan <code>parseInt()</code> / <code>parseFloat()</code> dengan <code>Number()</code>.<br>
+                    2. Apa yang terjadi jika mengkonversi teks biasa (misal: <code>Number("Asep")</code>) ke angka.
+                </div>
+            </div>
+            <div class="form-group">
+                <label>1 hal yang ingin saya coba pada program berikutnya:</label>
+                <div class="answer-box">
+                    1. Mempersiapkan program yang dapat memvalidasi jika user memasukkan input bukan angka (NaN).
+                </div>
+            </div>
+        </section>
+
+        <!-- J. PENILAIAN DIRI -->
+        <section class="card border-blue">
+            <h3><span class="badge badge-blue">J</span> PENILAIAN DIRI</h3>
+            <table class="colored-table">
+                <thead>
+                    <tr>
+                        <th>Pernyataan</th>
+                        <th style="width: 80px; text-align: center;">Ya</th>
+                        <th style="width: 80px; text-align: center;">Belum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Saya dapat membedakan String dan Number.</td>
+                        <td style="text-align: center;"><input type="checkbox" checked disabled></td>
+                        <td style="text-align: center;"><input type="checkbox" disabled></td>
+                    </tr>
+                    <tr>
+                        <td>Saya memahami <code>prompt()</code> menghasilkan String.</td>
+                        <td style="text-align: center;"><input type="checkbox" checked disabled></td>
+                        <td style="text-align: center;"><input type="checkbox" disabled></td>
+                    </tr>
+                    <tr>
+                        <td>Saya dapat menggunakan <code>Number()</code>.</td>
+                        <td style="text-align: center;"><input type="checkbox" checked disabled></td>
+                        <td style="text-align: center;"><input type="checkbox" disabled></td>
+                    </tr>
+                    <tr>
+                        <td>Saya dapat menggunakan <code>String()</code>.</td>
+                        <td style="text-align: center;"><input type="checkbox" checked disabled></td>
+                        <td style="text-align: center;"><input type="checkbox" disabled></td>
+                    </tr>
+                    <tr>
+                        <td>Saya dapat menemukan kesalahan tipe data.</td>
+                        <td style="text-align: center;"><input type="checkbox" checked disabled></td>
+                        <td style="text-align: center;"><input type="checkbox" disabled></td>
+                    </tr>
+                    <tr>
+                        <td>Saya dapat membuat program input dan hitung sederhana.</td>
+                        <td style="text-align: center;"><input type="checkbox" checked disabled></td>
+                        <td style="text-align: center;"><input type="checkbox" disabled></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- K. RUBRIK PENILAIAN PRAKTIK -->
+        <section class="card border-slate">
+            <h3><span class="badge badge-slate">K</span> RUBRIK PENILAIAN PRAKTIK</h3>
+            <table class="colored-table rubrik-table">
+                <thead>
+                    <tr>
+                        <th>Aspek</th>
+                        <th>4 - Sangat Baik</th>
+                        <th>3 - Baik</th>
+                        <th>2 - Cukup</th>
+                        <th>1 - Perlu Bimbingan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Tipe Data</strong></td>
+                        <td class="highlight-score">Membedakan String/Number dengan detail.</td>
+                        <td>Menjelaskan dan memberi contoh.</td>
+                        <td>Masih ada kekeliruan.</td>
+                        <td>Belum memahami.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Konversi</strong></td>
+                        <td class="highlight-score">Tepat dan mandiri.</td>
+                        <td>Benar dengan sedikit arahan.</td>
+                        <td>Beberapa kesalahan.</td>
+                        <td>Belum mampu.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Program</strong></td>
+                        <td class="highlight-score">Berjalan benar dan rapi.</td>
+                        <td>Sedikit kesalahan.</td>
+                        <td>Berjalan sebagian.</td>
+                        <td>Belum berjalan.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pemecahan Masalah</strong></td>
+                        <td class="highlight-score">Menemukan & memperbaiki mandiri.</td>
+                        <td>Memperbaiki dengan sedikit bantuan.</td>
+                        <td>Membutuhkan banyak bantuan.</td>
+                        <td>Belum mampu.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="form-group" style="margin-top: 15px;">
+                <label>Catatan Guru:</label>
+                <div class="teacher-box">
+                    Sangat baik! Pemahaman konsep tipe data dan konversi sudah sangat mantap. Program berjalan tanpa kendala. Tingkatkan terus logika pemrogramannya!
+                </div>
+            </div>
+        </section>
+    </div>
+<script src="lkpd.js"></script>
+</body>
+</html>

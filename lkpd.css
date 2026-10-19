@@ -1,0 +1,296 @@
+/* RESET & VARIABLE WARNA */
+:root {
+    --primary: #3b82f6;
+    --primary-dark: #1d4ed8;
+    --bg-main: #f3f4f6;
+    --card-bg: #ffffff;
+    --text-dark: #1f2937;
+    --text-muted: #4b5563;
+    
+    /* Variasi Warna Aksens */
+    --accent-blue: #2563eb;
+    --accent-indigo: #6366f1;
+    --accent-purple: #8b5cf6;
+    --accent-teal: #0d9488;
+    --accent-amber: #d97706;
+    --accent-emerald: #059669;
+    --accent-rose: #e11d48;
+    --accent-cyan: #0891b2;
+    --accent-violet: #7c3aed;
+    --accent-slate: #475569;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    line-height: 1.6;
+    padding: 24px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* HEADER LKPD */
+.header {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 12px;
+    border-top: 6px solid var(--accent-indigo);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    margin-bottom: 24px;
+}
+
+.header-banner {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 1.5rem;
+    color: #111827;
+    letter-spacing: 0.5px;
+    font-weight: 800;
+}
+
+.header h2 {
+    font-size: 1.15rem;
+    color: var(--accent-indigo);
+    margin-top: 4px;
+    font-weight: 600;
+}
+
+.meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    font-size: 0.9rem;
+    padding: 12px 16px;
+    background-color: #f8fafc;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 18px;
+}
+
+.student-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.student-info .field {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* CARDS / SECTION */
+.card {
+    background: var(--card-bg);
+    padding: 22px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Akses Warna Border Kiri */
+.border-blue { border-left: 5px solid var(--accent-blue); }
+.border-purple { border-left: 5px solid var(--accent-purple); }
+.border-indigo { border-left: 5px solid var(--accent-indigo); }
+.border-teal { border-left: 5px solid var(--accent-teal); }
+.border-amber { border-left: 5px solid var(--accent-amber); }
+.border-emerald { border-left: 5px solid var(--accent-emerald); }
+.border-rose { border-left: 5px solid var(--accent-rose); }
+.border-cyan { border-left: 5px solid var(--accent-cyan); }
+.border-violet { border-left: 5px solid var(--accent-violet); }
+.border-slate { border-left: 5px solid var(--accent-slate); }
+
+.card h3 {
+    font-size: 1.05rem;
+    color: #1f2937;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.badge {
+    color: #ffffff;
+    font-size: 0.8rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.badge-blue { background-color: var(--accent-blue); }
+.badge-purple { background-color: var(--accent-purple); }
+.badge-indigo { background-color: var(--accent-indigo); }
+.badge-teal { background-color: var(--accent-teal); }
+.badge-amber { background-color: var(--accent-amber); }
+.badge-emerald { background-color: var(--accent-emerald); }
+.badge-rose { background-color: var(--accent-rose); }
+.badge-cyan { background-color: var(--accent-cyan); }
+.badge-violet { background-color: var(--accent-violet); }
+.badge-slate { background-color: var(--accent-slate); }
+
+.card p, .card ul, .card ol {
+    font-size: 0.93rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.card ul, .card ol {
+    padding-left: 20px;
+}
+
+/* KODE BLOCK */
+pre {
+    background-color: #0f172a;
+    color: #38bdf8;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-family: 'Consolas', 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    margin: 12px 0;
+    overflow-x: auto;
+    border-left: 4px solid #38bdf8;
+}
+
+code {
+    font-family: 'Consolas', 'Courier New', Courier, monospace;
+    background-color: #f1f5f9;
+    color: #0284c7;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+    font-weight: normal;
+}
+
+/* FORM ELEMENTS & JAWABAN */
+.form-group {
+    margin-bottom: 14px;
+}
+
+label {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 6px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background-color: #f8fafc;
+    color: #0f172a;
+}
+
+/* Kotak Jawaban Terisi */
+.answer-box {
+    background-color: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #166534;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Catatan Guru Box */
+.teacher-box {
+    background-color: #fefce8;
+    border: 1px dashed #fde047;
+    color: #854d0e;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* TABEL BERWARNA */
+.colored-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 0.88rem;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.colored-table th, .colored-table td {
+    border: 1px solid #e2e8f0;
+    padding: 10px 12px;
+    text-align: left;
+}
+
+.colored-table th {
+    background-color: #f1f5f9;
+    color: #1e293b;
+    font-weight: 700;
+}
+
+/* TAGS UNTUK TIPE DATA */
+.tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.78rem;
+    font-weight: bold;
+    text-transform: lowercase;
+}
+
+.tag-orange { background-color: #ffedd5; color: #c2410c; }
+.tag-green { background-color: #dcfce7; color: #15803d; }
+
+/* RUBRIK PENILAIAN HIGHLIGHT */
+.rubrik-table td {
+    font-size: 0.82rem;
+}
+
+.highlight-score {
+    background-color: #dbeafe !important;
+    color: #1e40af !important;
+    font-weight: 600;
+    border: 1px solid #93c5fd !important;
+}
+
+/* CHECKBOX */
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #2563eb;
+    cursor: pointer;
+}
+
+/* MEDIA QUERY UNTUK PRINT */
+@media print {
+    body {
+        background-color: #fff;
+        padding: 0;
+    }
+    .card, .header {
+        border: 1px solid #94a3b8;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
